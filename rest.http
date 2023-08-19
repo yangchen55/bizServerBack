@@ -1,0 +1,109 @@
+// admin api
+
+# @url = http://localhost:8000/api/v1
+# @url = http://ecommerce-env.eba-fm3vjcbd.us-east-1.elasticbeanstalk.com/api/v1
+
+@url= http://localhost:8000/api/v1
+
+
+# Create new admin user
+POST  {{url}}/admin/register
+Content-Type: application/json
+
+{
+"address": "", 
+"email": "test@gmail.com",
+"fName":"Tsering",
+"lName": "lama",
+"password": "Qq1234",
+"phone": null
+}
+
+
+### login user
+POST    {{url}}/admin/login
+# POST   {{url}}/admin/login
+Content-Type: application/json
+
+{
+
+"email": "test@gmail.com",
+"password": "Qq1234"
+
+}
+
+
+##========== category api
+
+### create new api
+Get  {{url}}/category
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2Nzg2NjQ2MDEsImV4cCI6MTY3ODY2NTUwMX0.WXqr_MVQeBj3wbyOWMBMP-qHVr0YLa7xdxiyUFUhiGA
+
+
+### create new api
+POST   {{url}}/category
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2Nzg2NjQ2MDEsImV4cCI6MTY3ODY2NTUwMX0.WXqr_MVQeBj3wbyOWMBMP-qHVr0YLa7xdxiyUFUhiGA
+
+{
+"name": "Large Monitor asfs  2"
+}
+
+### get categorie(s)
+PUT  {{url}}/category
+Content-Type: application/json
+
+{
+"_id": "63f40b41cdc8e9f473f4d4ee",
+"status": "active",
+"name": "Computers"
+}
+
+### create new api
+DELETE   {{url}}/category/63f432fd4751590249cb5a7f
+
+
+
+
+##========== payment methods api
+
+### create new api
+GET    {{url}}/payment-method
+  
+
+
+### create new api
+POST   {{url}}/payment-method
+Content-Type: application/json
+
+{
+"name": "Bank tranfer",
+"description": "please eft to the BSB:234-533 Account: 1234567"
+}
+
+### create new api
+DELETE {{url}}/payment-method/63f432fd4751590249cb5a7f
+
+
+
+### get 
+get http://ecommerce-env.eba-fm3vjcbd.us-east-1.elasticbeanstalk.com/
+
+
+###
+GET  http://ecommerce-env.eba-fm3vjcbd.us-east-1.elasticbeanstalk.com/
+
+
+
+
+
+### product
+GET {{url}}/product
+
+
+
+### payments
+GET {{url}}/order
+
+### customers
+GET {{url}}/customer
